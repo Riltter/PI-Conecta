@@ -10,7 +10,7 @@ Antes de mais nada, tenha o git instalado
 
 * Passo 2 (clonagem do repositorio) - abra o terminal e digite o código a seguir
 
-	ˋgit clone https://github.com/Riltter/PI-Conecta.gitˋ
+	ˋ git clone https://github.com/Riltter/PI-Conecta.git ˋ
 
 * Passo 3 - feita a clonagem, você irá para a pasta criada no repositório, da seguinte forma:
 
