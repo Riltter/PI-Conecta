@@ -13,11 +13,6 @@ const App = () => {
     <>
 
       <Router>
-        <ul>
-          <Link to="/">Register</Link>
-          <Link to="/feed">Feed</Link>
-          <Link to="/profile">Profile</Link>
-        </ul>
         <Routes>
           <Route exact path='/' element={<Register />} />
           <Route path="/feed" element={<Feed />} />
