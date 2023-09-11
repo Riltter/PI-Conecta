@@ -27,15 +27,17 @@ body {
 
 .titleRegister {
     font-family: 'Abhaya Libre', serif;
-    font-size: 30px;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .formularioDeCadastro {
     background-color: #252A34;
     border-radius: 65px;
     padding: 1rem;
-    width: 60.3vw;
-    height: 78vh;
+    max-width: 80.3vw;
+    
+   
 }
 
 form {
@@ -50,7 +52,9 @@ form {
     grid-template-columns: 1fr 1fr;
     color: whitesmoke;
     justify-content: space-between;
-    width: 55vw;
+    width: 100%; 
+    max-width: 90rem; 
+    margin: 0 auto; 
 }
 
 .form_input_group > div:last-child {
@@ -64,6 +68,8 @@ form {
     flex-direction: column;
     margin-bottom: 3px;
     padding: 10px;
+    width: 30em;
+
 }
 
 .input_box input {
@@ -74,16 +80,12 @@ form {
     margin-top: 4px;
     padding: 18px 15px;
     color: whitesmoke;
-    font-size: 15px;
+    font-size: 1rem;
 }
 
 .input_box input::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
-
-input[type="text"] {
-    background-color: transparent;
-  }
 
 
 input::placeholder,
@@ -92,12 +94,18 @@ textarea::placeholder {
 }
 
 /* Register button */
+.contButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .btnCadastrar {
     margin-top: 18px;
     background: linear-gradient(rgba(242, 86, 30, 1), rgba(250, 130, 16, 1));
     display: inline-flex;
     height: 3rem;
-    width: 20vw;
+    width: 12rem;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -109,6 +117,7 @@ textarea::placeholder {
     font-size: 1rem;
     cursor: pointer;
 }
+
 
 .pHaveAcconut {
     margin-top: 15px;
@@ -122,4 +131,40 @@ textarea::placeholder {
 
 .pHaveAcconut a {
     color: rgb(255, 136, 0);
+}
+
+/* Responsividade */
+
+@media(max-width: 992px) {
+
+    .titleRegister {
+        font-family: 'Abhaya Libre', serif;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .formularioDeCadastro {
+        background-color: #252A34;
+        border-radius: 15px;
+        padding: 1rem;
+        width: 100%;
+        height: fit-content;
+        margin: auto;
+    }
+
+    .form_input_group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .form_input_group > div:last-child {
+        width: fit-content;
+    }
+
+    .input_box {
+        width: 15em;
+    }
+
 }

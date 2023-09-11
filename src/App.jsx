@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Register from './components/pages/Register';
 import Profile from './components/pages/Profile';
 import Feed from './components/pages/Feed';
-import { BrowserRouter as Router, Routes, Route,} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 
 import './App.css'
 import Login from './components/pages/Login';
@@ -12,7 +12,6 @@ const App = () => {
 
   return (
     <>
-
       <Router>
         <Routes>
           <Route exact path='/' element={<Register />} />
