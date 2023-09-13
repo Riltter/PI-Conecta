@@ -23,6 +23,7 @@ body {
     background-color: #f5f5f5;
     font-family: 'Rubik', sans-serif;
     gap: 1.5rem;
+    margin: .5rem 0;
 }
 
 .titleRegister {
