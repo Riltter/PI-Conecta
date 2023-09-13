@@ -20,8 +20,19 @@ const Register = () => {
 
     return (
         <>
-            <section></section>
-            <section></section>
+            <section className={style.secao_logo}>
+                <div className={style.div_css}>
+                <Link className={style.link_button} to="/login"><button>Entrar</button></Link>
+                </div>
+                <div className={style.logo_conecta}>
+                    <img src=".\src\assets\conectaLogo.png" alt="Imagem Conecta!" />
+                </div>
+            </section>
+            <section>
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
             <section className={style.secao_formulario_cadastro}>
                 <p className={style.titleRegister}>Quer se conectar aos outros estudantes? Faça o seu cadastro!</p>
                 <div className={style.formularioDeCadastro}>
@@ -39,12 +50,12 @@ const Register = () => {
                                     />
                             </div>
                             <div className={style.input_box}>
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="email">E-mail</label>
                                 <input 
                                     type="email" 
                                     id="emailId" 
                                     name="email" 
-                                    placeholder='Digite o seu email institucional' 
+                                    placeholder='Digite o seu e-mail institucional' 
                                     onChange={(e) => setEmail(e.target.value)} 
                                     required 
                                     />
@@ -78,6 +89,7 @@ const Register = () => {
                                     type="password" 
                                     id="passwordId" 
                                     name="password" 
+                                    placeholder='Confirme sua senha' 
                                     onChange={(e) => setSenha(e.target.value)} 
                                     required 
                                     />
@@ -87,7 +99,8 @@ const Register = () => {
                                 <input 
                                     type="password" 
                                     id="passwordConfirmId" 
-                                    name="passwordConfirm" 
+                                    name="passwordConfirm"
+                                    placeholder='Confirme sua senha' 
                                     onChange={(e) => setConfirmSenha(e.target.value)} 
                                     required 
                                     />
