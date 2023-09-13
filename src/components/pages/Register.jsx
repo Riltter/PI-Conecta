@@ -29,9 +29,15 @@ const Register = () => {
                 </div>
             </section>
             <section>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div className = {style.imagem_azul}>
+                    <img src=".\src\assets\azul.jpg" alt="Pessoas com roupa azul!" />
+                </div>
+                <div className={style.maos}>
+                    <img src=".\src\assets\azul.jpg" alt="Maos juntas!" />
+                </div>
+                <div className={style.pessoas}>
+                    <img src=".\src\assets\azul.jpg" alt="Pessoas trabalhando!" />
+                </div>
             </section>
             <section className={style.secao_formulario_cadastro}>
                 <p className={style.titleRegister}>Quer se conectar aos outros estudantes? Faça o seu cadastro!</p>
