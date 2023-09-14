@@ -29,14 +29,25 @@ const Register = () => {
                 </div>
             </section>
             <section>
-                <div className = {style.imagem_azul}>
-                    <img src=".\src\assets\azul.jpg" alt="Pessoas com roupa azul!" />
+
+
+                <div className={style.div_apresentacao}>
+                    <img className={style.imagem_apresentacao} src=".\src\assets\azul.jpg" alt="Pessoas com roupa azul!" />
+                    <h1 className={style.texto_apresentacao1}>Conectando graduandos para potencializar a eficiência de projetos em desenvolvimento.</h1>
                 </div>
-                <div className={style.maos}>
-                    <img src=".\src\assets\azul.jpg" alt="Maos juntas!" />
+
+
+
+                <div className={style.div_apresentacao2}>
+                    <h1 className={style.texto_apresentacao2}>Convide pessoas que entendem do assunto para te ajudar no seu projeto.</h1>
+                    <img className={style.imagem_apresentacao} src="./src/assets/maos.jpg" alt="Maos juntas" />
                 </div>
-                <div className={style.pessoas}>
-                    <img src=".\src\assets\azul.jpg" alt="Pessoas trabalhando!" />
+
+
+
+                <div className={style.div_apresentacao}>
+                    <img className={style.imagem_apresentacao} src=".\src\assets\pessoas.jpg" alt="Pessoas trabalhando" />
+                    <h1 className={style.texto_apresentacao1}>Faça networking com granduandos da sua área e de outram também!</h1>                   
                 </div>
             </section>
             <section className={style.secao_formulario_cadastro}>

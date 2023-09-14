@@ -35,6 +35,7 @@ body {
     border: 0.2rem solid rgba(242, 86, 30, 1);
     cursor: pointer;
     text-align: center;
+    transition: 1s all;
 }
 
 .link_button button:hover{
@@ -59,11 +60,48 @@ body {
 }
 
 .logo_conecta img{
-    width: 100%;
+    width: 40vw;
 }
 .link_button{
     display: flex;
     justify-content: flex-end;
+}
+
+.div_apresentacao{
+    display: flex;
+    justify-content:center;
+    padding-left: 5rem;
+}
+
+.div_apresentacao2{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    padding-right: 5rem;
+}
+
+.texto_apresentacao1{
+    font-family: "Inter", sans-serif;
+    margin-top: 6rem;
+    font-weight: bold;
+    font-size: 40px;
+    padding-left: 3rem;
+    padding-right: 10rem
+}
+
+.texto_apresentacao2{
+    font-family: "Inter", sans-serif;
+    margin-top: 6rem;
+    font-weight: bold;
+    font-size: 40px;
+    padding-left: 10rem;
+    padding-right: 3rem;
+}
+
+.imagem_apresentacao{
+    border-radius: 10%;
+    max-width: 35vw;
+    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Registration section */
