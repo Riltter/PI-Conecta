@@ -35,7 +35,7 @@ body {
     border: 0.2rem solid rgba(242, 86, 30, 1);
     cursor: pointer;
     text-align: center;
-    transition: 1s all;
+    transition: 1   s all;
 }
 
 .link_button button:hover{
