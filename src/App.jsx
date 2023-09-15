@@ -18,6 +18,7 @@ const App = () => {
           <Route path="/feed" element={<Feed />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/registerproject" element={<Login />} />
         </Routes>
       </Router>
     </>

@@ -8,9 +8,7 @@ Antes de mais nada, tenha o git instalado
 **Passo 1** -  Crie uma pasta e abra ela no vscode, pois faremos um clone da pasta(repositorio) dentro da pasta que acaba de criar.
 
 
-**Passo 2** - (Clonagem do Repositorio) - abra o terminal e digite o código a seguir:
-
- 	 git clone https://github.com/Riltter/PI-Conecta.git
+**Passo 2** - (Clonagem do Repositorio) - clique no botão escrito code neste respositório, copie o link e faça: " git clone link-do-repositorio "
 
 **Passo 3** - feita a clonagem, você irá para a pasta criada no repositório, da seguinte forma:
 
