@@ -6,17 +6,8 @@ const RegisterProject = () => {
 
     return (
         <>
-        {/*<div className={style.}>
-
+        <div>
         </div>
-
-
-
-
-        
-        
-    */}
-        
         </>
     );
 
