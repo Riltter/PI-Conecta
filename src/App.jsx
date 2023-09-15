@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Register from './components/pages/Register';
 import Profile from './components/pages/Profile';
 import Feed from './components/pages/Feed';
+import RegisterProject from './components/pages/RegisterProject';
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 
 import './App.css'
@@ -18,7 +19,7 @@ const App = () => {
           <Route path="/feed" element={<Feed />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/registerproject" element={<Login />} />
+          <Route path="/registerproject" element={<RegisterProject />} />
         </Routes>
       </Router>
     </>
