@@ -9,7 +9,7 @@
 }
 
 body {
-    background: 100vh;
+    background-color: #348888;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@ body {
 
 div {
     height: 40rem;
-    background-color: gray;
+    background-color: white;
     width: 100%;
     max-width: 60rem;
     border-radius: 20px;
