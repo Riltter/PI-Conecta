@@ -9,5 +9,17 @@
 }
 
 body {
-    background-color: #ffffff;
+    background: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    height: 40rem;
+    background-color: gray;
+    width: 100%;
+    max-width: 60rem;
+    border-radius: 20px;
+    margin-top: 1rem;
 }
