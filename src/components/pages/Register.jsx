@@ -20,8 +20,28 @@ const Register = () => {
 
     return (
         <>
-            <section></section>
-            <section></section>
+            <section className={style.secao_logo}>
+                <div className={style.div_css}>
+                <Link className={style.link_button} to="/login"><button>Entrar</button></Link>
+                </div>
+                <div className={style.logo_conecta}>
+                    <img src=".\src\assets\conectaLogo.png" alt="Imagem Conecta!" />
+                </div>
+            </section>
+            <section>
+                <div className={style.div_apresentacao}>
+                    <img className={style.imagem_apresentacao} src=".\src\assets\azul.jpg" alt="Pessoas com roupa azul!" />
+                    <h1 className={style.texto_apresentacao1}>Conectando graduandos para potencializar a eficiência de projetos em desenvolvimento.</h1>
+                </div>
+                <div className={style.div_apresentacao2}>
+                    <h1 className={style.texto_apresentacao2}>Convide pessoas que entendem do assunto para te ajudar no seu projeto.</h1>
+                    <img className={style.imagem_apresentacao} src="./src/assets/maos.jpg" alt="Maos juntas" />
+                </div>
+                <div className={style.div_apresentacao}>
+                    <img className={style.imagem_apresentacao} src=".\src\assets\pessoas.jpg" alt="Pessoas trabalhando" />
+                    <h1 className={style.texto_apresentacao1}>Faça networking com granduandos da sua área e de outram também!</h1>                   
+                </div>
+            </section>
             <section className={style.secao_formulario_cadastro}>
                 <p className={style.titleRegister}>Quer se conectar aos outros estudantes? Faça o seu cadastro!</p>
                 <div className={style.formularioDeCadastro}>
@@ -39,12 +59,12 @@ const Register = () => {
                                     />
                             </div>
                             <div className={style.input_box}>
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="email">E-mail</label>
                                 <input 
                                     type="email" 
                                     id="emailId" 
                                     name="email" 
-                                    placeholder='Digite o seu email institucional' 
+                                    placeholder='Digite o seu e-mail institucional' 
                                     onChange={(e) => setEmail(e.target.value)} 
                                     required 
                                     />
@@ -78,6 +98,7 @@ const Register = () => {
                                     type="password" 
                                     id="passwordId" 
                                     name="password" 
+                                    placeholder='Confirme sua senha' 
                                     onChange={(e) => setSenha(e.target.value)} 
                                     required 
                                     />
@@ -87,7 +108,8 @@ const Register = () => {
                                 <input 
                                     type="password" 
                                     id="passwordConfirmId" 
-                                    name="passwordConfirm" 
+                                    name="passwordConfirm"
+                                    placeholder='Confirme sua senha' 
                                     onChange={(e) => setConfirmSenha(e.target.value)} 
                                     required 
                                     />
