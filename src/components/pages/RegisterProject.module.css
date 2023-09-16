@@ -15,11 +15,29 @@ body {
     align-items: center;
 }
 
-div {
-    height: 40rem;
+    .DivImgTelaCadastro{
+    width: 1137px;
+    height: 772px;
+    border-radius: 50px;
     background-color: white;
-    width: 100%;
-    max-width: 60rem;
-    border-radius: 20px;
-    margin-top: 1rem;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.imgTelaCadastro {
+    width: 442px;
+    height: 100%;
+    border-radius: 50px 0px 0px 50px;
+}
+
+.Titulo {
+    width: 575px;
+    height: 61px;
+    color: #38535F;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
 }
