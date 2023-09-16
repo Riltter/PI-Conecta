@@ -12,7 +12,7 @@ const RegisterProject = () => {
         <>
         <div className={style.DivImgTelaCadastro}>
             <img className={style.imgTelaCadastro} src=".\src\assets\cadastro projeto img.jpg" alt="ideia"/>
-            <form>
+            <form className={style.FormProject}>
                 <h1 className={style.Titulo}>Cadastre seu Projeto!</h1> 
                 <div className={style.ImputGroup}>
                     <div className={style.ImputBox}>
@@ -48,21 +48,23 @@ const RegisterProject = () => {
 
                     <div className={style.ImputBox}>
                         <label htmlFor="Descricao">Descrição do Projeto</label>
-                        <input type="text" 
+                        <textarea
+                        rows="4"
+                        cols="50"
                         name='Descricao'
                         placeholder='Descreva seu projeto'
                         onChange={(e) => setDescricao(e.target.value)}
                         required
                         />
                     </div>
+                </div>
 
-                    <input 
-                        className={style.btnCadastrar} 
+                <input 
+                        className={style.btnCadastrar1} 
                         type="submit" 
                         value={"Cadastrar"} 
                     />
 
-                </div>
             </form>
         </div>
         </>
