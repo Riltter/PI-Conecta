@@ -30,7 +30,7 @@ const Register = () => {
             </section>
             <section>
                 <div className={style.div_apresentacao}>
-                    <img className={style.imagem_apresentacao} src="src/assets/azul.jpg" alt="Pessoas com roupa azul!" />
+                    <img className={style.imagem_apresentacao} src={"./src/assets/azul.jpg"} alt="Pessoas com roupa azul!" />
                     <h1 className={style.texto_apresentacao1}>Conectando graduandos para potencializar a eficiência de projetos em desenvolvimento.</h1>
                 </div>
                 <div className={style.div_apresentacao2}>
