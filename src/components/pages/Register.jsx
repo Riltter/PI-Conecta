@@ -25,7 +25,7 @@ const Register = () => {
                 <Link className={style.link_button} to="/login"><button>Entrar</button></Link>
                 </div>
                 <div className={style.logo_conecta}>
-                    <img src=".\public\conectaLogo.png" alt="Imagem Conecta!" />
+                    <img src=".\src\conectaLogo.png" alt="Imagem Conecta!" />
                 </div>
             </section>
             <section>
