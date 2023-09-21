@@ -1,6 +1,7 @@
 import style from './RegisterProject.module.css'
 import { Link } from "react-router-dom";
 import { useState } from 'react';
+import Navbar from '../Navbar';
 
 const RegisterProject = () => {
     const [NomePorjeto, setNomeProjeto] = useState("");
@@ -10,6 +11,7 @@ const RegisterProject = () => {
 
     return (
         <>
+        <Navbar></Navbar>
         <div className={style.DivImgTelaCadastro}>
             <img className={style.imgTelaCadastro} src=".\src\assets\cadastro projeto img.jpg" alt="ideia"/>
             <form className={style.FormProject}>
