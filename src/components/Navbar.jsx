@@ -6,9 +6,10 @@ import { RiUserSearchLine } from "react-icons/ri";
 // Elementos do CSS
 const Navegacao = styled.nav `
     display: flex;
-    width: max-content;
+    width: 100%;
     height: 4.85rem;
     background-color: white;
+    position: absolute;
 `;
 
 const LogoConecta = styled.img`
@@ -48,4 +49,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default Navbar
