@@ -12,6 +12,7 @@ const RegisterProject = () => {
     return (
         <>
         <Navbar></Navbar>
+        <div className={style.Corpo}>
         <div className={style.DivImgTelaCadastro}>
             <img className={style.imgTelaCadastro} src=".\src\assets\cadastro projeto img.jpg" alt="ideia"/>
             <form className={style.FormProject}>
@@ -68,6 +69,7 @@ const RegisterProject = () => {
                     />
 
             </form>
+        </div>
         </div>
         </>
     );

@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@800&family=Actor&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
-/* General settings */
+@media only screen and (max-width:992vh) {
+    /* General settings */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
 
-body {
+.Corpo {
     background-color: #348888;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 9vh;
 }
 
     .DivImgTelaCadastro{
-    width: 1137px;
-    height: 772px;
-    border-radius: 50px;
+    width: 128.7vh;
+    height: 87.4vh;
+    border-radius: 5.6vh;
     background-color: white;
     margin-top: 5vh;
     display: flex;
@@ -26,17 +29,16 @@ body {
 }
 
 .imgTelaCadastro {
-    width: 442px;
+    width: 50vh;
     height: 100%;
-    border-radius: 50px 0px 0px 50px;
+    border-radius: 5.6vh 0vh 0vh 5.6vh;
 }
 
 .Titulo {
-    width: 575px;
-    height: 61px;
+    width: 65.1vh;
     color: #38535F;
     font-family: Inter;
-    font-size: 50px;
+    font-size: 5.6vh;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
@@ -54,19 +56,19 @@ body {
     margin-top: 5vh;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-gap: 10px;
+    grid-gap: 1.1vh;
     width: 90%;
 }
 
 .ImputBox {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 0.7vh;
 }
 
 .ImputBox label {
     font-family: "Inter", sans-serif;
-    font-size: 20px;
+    font-size: 2.2vh;
     font-weight: bold;
     color: #38535F;
 
@@ -74,10 +76,10 @@ body {
 
 .ImputBox input {
     background-color: #d9d9d9;
-    border-radius: 100px;
+    border-radius: 11.3vh;
     border: none;
-    height: 40px;
-    padding: 10px;
+    height: 4.5vh;
+    padding: 1.1vh;
 }
 
 .ImputBox:nth-child(1) {
@@ -104,10 +106,10 @@ body {
     resize: none;
 
     background-color: #d9d9d9;
-    border-radius: 20px;
+    border-radius: 2.2vh;
     border: none;
     height: 25vh;
-    padding: 10px;
+    padding: 1.1vh;
 }
 
 .btnCadastrar1 {
@@ -126,3 +128,5 @@ body {
     text-align: center;
     transition: 1 s all;
 }
+}
+

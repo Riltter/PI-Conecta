@@ -10,6 +10,7 @@ const Navegacao = styled.nav `
     height: 4.85rem;
     background-color: white;
     position: absolute;
+    pading botton: 10;
 `;
 
 const LogoConecta = styled.img`
