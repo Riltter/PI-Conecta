@@ -27,21 +27,22 @@ const BarraPesquisa = styled.div`
     width: 900px;
     margin-right: 20px;
     position: relative;
-    background-color: white;
+    background-color: #f0f0f0;
 `;
 
 const InputPesquisa = styled.input`
-    flex-grow: 1; /* Ocupar todo o espaço disponível */
+    flex-grow: 1; 
     font-size: 1.2rem;
     padding: 10px;
     border: none;
     outline: none;
+    background-color: #f0f0f0;
 `;
 
 const BotaoBarraPesquisa = styled.button`
     font-size: 1.4rem;
     padding: 10px;
-    background-color: white;
+    background-color:#f0f0f0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
