@@ -23,13 +23,13 @@ body {
     margin-top: 5vh;
     display: flex;
     flex-direction: row;
-        box-shadow: 5px 5px 5px #38535F; 
+    box-shadow: 5px 5px 5px #38535F;
 }
 
 .imgTelaCadastro {
-    width: 442px;
+    width: 560px;
     height: 100%;
-    border-radius: 50px 0px 0px 50px;   
+    border-radius: 50px 0px 0px 50px;
 }
 
 .Titulo {
@@ -42,7 +42,8 @@ body {
     font-weight: 800;
     line-height: normal;
     margin-left: 15px;
-    
+    margin-bottom: 50px;
+
 }
 
 .FormProject {
@@ -56,10 +57,11 @@ body {
 .ImputGroup {
     margin-top: 5vh;
     display: flex;
+    margin-right: 10vh;
     flex-direction: column;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
-    width: 90%;
+    width: 78%;
 }
 
 .ImputBox {
