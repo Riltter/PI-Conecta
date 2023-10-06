@@ -9,7 +9,8 @@
 }
 
 body {
-    background-color: #348888;
+    background: rgb(40,189,238);
+    background: radial-gradient(circle, rgba(40,189,238,1) 0%, rgba(10,82,102,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
