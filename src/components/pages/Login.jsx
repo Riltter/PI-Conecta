@@ -28,8 +28,8 @@ const Login = () => {
                         <div className={style.ImputBox}>
                             <label htmlFor="senha"></label>
                             <input type="text"
-                                name='Senha'
-                                placeholder='senha'
+                                name='senha'
+                                placeholder='Senha'
                                 onChange={(e) => setsenha(e.target.value)}
                                 required
                             />
