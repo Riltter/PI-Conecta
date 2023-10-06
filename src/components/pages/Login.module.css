@@ -15,18 +15,18 @@ body {
     align-items: center;
 }
 
-.DivImgTelaCadastro {
+.DivImgTelaLogin {
     width: 1090px;
-    height: 680px;
+    height: 650px;
     border-radius: 50px;
     background-color: white;
-    margin-top: 5vh;
+    margin-top: 6vh;
     display: flex;
     flex-direction: row;
     box-shadow: 5px 5px 5px #38535F;
 }
 
-.imgTelaCadastro {
+.imgTelaLogin {
     width: 560px;
     height: 100%;
     border-radius: 50px 0px 0px 50px;
@@ -68,6 +68,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 7px;
+    width: 450px;
 }
 
 .ImputBox label {
@@ -86,9 +87,14 @@ body {
     padding: 10px;
 }
 
+.buttons {
+    height: 50px;
+    width: 217px;
+    margin-bottom: 20px;
+}
+
 .btnCadastrar1 {
     margin-top: 5vh;
-
     font-family: "Inter", sans-serif;
     font-weight: bold;
     color: #fff;
@@ -100,6 +106,22 @@ body {
     border: 0.2rem solid rgba(242, 86, 30, 1);
     cursor: pointer;
     text-align: center;
+    transition: 1 s all;
+    margin-bottom: 10px;
+}
+
+.btnCadastrar2 {
+    width: 9.063rem;
+    height: 2.813rem;
+    bottom: 5rem;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 24px;
+    text-align: center;
+    color: #38535F;
+    border-radius: 1rem;
     transition: 1 s all;
 
 }

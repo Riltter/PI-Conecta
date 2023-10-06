@@ -10,38 +10,43 @@ const Login = () => {
 
     return (
         <>
-            <div className={style.DivImgTelaCadastro}>
-                <img className={style.imgTelaCadastro} src=".\src\assets\maos.jpg" alt="uniao" />
+            <div className={style.DivImgTelaLogin}>
+                <img className={style.imgTelaLogin} src=".\src\assets\maos.jpg" alt="uniao" />
                 <form className={style.FormProject}>
                     <h1 className={style.Titulo}>Oi de novo! <br />Que bom que voltou!</h1>
                     <div className={style.ImputGroup}>
                         <div className={style.ImputBox}>
-                            <label htmlFor="nameProjeto">Login</label>
+                            <label htmlFor="email">Login</label>
                             <input type="text"
-                                name='nameProjeto'
+                                name='email'
                                 placeholder='Email'
-                                onChange={(e) => setNomeProjeto(e.target.value)}
+                                onChange={(e) => setemail(e.target.value)}
                                 required
                             />
                         </div>
 
                         <div className={style.ImputBox}>
-                            <label htmlFor="AreaInteresse"></label>
+                            <label htmlFor="senha"></label>
                             <input type="text"
-                                name='AreaInteresse'
+                                name='senha'
                                 placeholder='senha'
-                                onChange={(e) => setAreaInteresse(e.target.value)}
+                                onChange={(e) => setsenha(e.target.value)}
                                 required
                             />
                         </div>
                     </div>
-
-                    <input
-                        className={style.btnCadastrar1}
-                        type="submit"
-                        value={"Cadastrar"}
-                    />
-
+                    
+                    <div className={style.buttons}>
+                        <input
+                            className={style.btnCadastrar1}
+                            type="submit"
+                            value={"Entrar"}
+                        />
+                        <input 
+                            className={style.btnCadastrar2}
+                            type='submit'
+                            value={"Cadastrar"} />
+                    </div>
                 </form>
             </div>
         </>
