@@ -14,17 +14,16 @@ function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(senha, "/", confirmSenha);
-    if (
-      senha === confirmSenha
-        ? alert("Senhas conferem")
-        : alert("Senhas não conferem")
-    );
+    if (senha === confirmSenha){
+        alert("Senhas conferem")
+        handleAddUser();
+    } else {
+        alert("Senhas não conferem")
+    }
   };
 
   const handleAddUser = async (event) => {
-    event.preventDefault();
-
+    
     const dados = {
       nome_completo: nomeCompleto,
       email: email,
@@ -180,7 +179,6 @@ function Register() {
                 className={style.btnCadastrar}
                 type="submit"
                 name="Cadastrar"
-                onClick={(e) => handleAddUser(e)}
               />
               <p className={style.pHaveAcconut}>
                 Já tem uma conta? <Link to="/login">Clique aqui</Link>
