@@ -16,17 +16,4 @@ router.put("/:cpf", updateUsers);
 
 router.delete("/:cpf", deleteUsers);
 
-/* {
-  const { email, senha } = req.body;
-
-  const user = users.find(
-    (user) => user.email === email && user.password === password
-  );
-  if (user) {
-    return res.status(200).json(user);
-  }
-  return res.status(400).json({ message: "Crendeciais inválidas" });
-});
-*/
-
 export default router;

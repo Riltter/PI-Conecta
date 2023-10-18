@@ -14,6 +14,7 @@ function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(senha, "/", confirmSenha);
     if (
       senha === confirmSenha
         ? alert("Senhas conferem")
