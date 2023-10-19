@@ -14,16 +14,15 @@ function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (senha === confirmSenha){
-        alert("Senhas conferem")
-        handleAddUser();
+    if (senha === confirmSenha) {
+      alert("Senhas conferem");
+      handleAddUser();
     } else {
-        alert("Senhas não conferem")
+      alert("Senhas não conferem");
     }
   };
 
-  const handleAddUser = async (event) => {
-    
+  const handleAddUser = async (e) => {
     const dados = {
       nome_completo: nomeCompleto,
       email: email,
@@ -43,7 +42,7 @@ function Register() {
   };
 
   return (
-    <>
+    <div className="telaregister">
       <section className={style.secao_logo}>
         <div className={style.div_css}>
           <Link className={style.link_button} to="/login">
@@ -179,6 +178,7 @@ function Register() {
                 className={style.btnCadastrar}
                 type="submit"
                 name="Cadastrar"
+                value="Cadastrar"
               />
               <p className={style.pHaveAcconut}>
                 Já tem uma conta? <Link to="/login">Clique aqui</Link>
@@ -187,7 +187,7 @@ function Register() {
           </form>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
