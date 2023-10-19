@@ -1,57 +1,77 @@
-import style from './Login.module.css'
-import { Link } from "react-router-dom";
+import style from './Login.module.css';
+import { Link, Navigate } from "react-router-dom";
 import { useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-    const [NomePorjeto, setNomeProjeto] = useState("");
-    const [AreaInteresse, setAreaInteresse] = useState("");
-    const [NumParticiapantes, setNumParticipantes] = useState("");
-    const [Descricao, setDescricao] = useState("");
+
+    const { signin } = useAuth();
+
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [error, setError] = useState("");
+
+    const handleLogin = () => {
+        if (!email || !senha) {
+            setError("Preencha todos os campos");
+            console.log(error)
+            return;
+        }
+
+        const res = signin(email, senha);
+
+        if (res) {
+            setError(res);
+            return;
+        }
+
+        <Navigate to="/feed" replace={true}/>
+    };
 
     return (
-        <>
-            <div className={style.DivImgTelaLogin}>
-                <img className={style.imgTelaLogin} src=".\src\assets\maos.jpg" alt="uniao" />
-                <form className={style.FormProject}>
-                    <h1 className={style.Titulo}>Oi de novo! <br />Que bom que voltou!</h1>
-                    <div className={style.ImputGroup}>
-                        <div className={style.ImputBox}>
-                            <label htmlFor="email">Login</label>
-                            <input type="text"
-                                name='email'
-                                placeholder='Email'
-                                onChange={(e) => setemail(e.target.value)}
-                                required
-                            />
-                        </div>
-
-                        <div className={style.ImputBox}>
-                            <label htmlFor="senha"></label>
-                            <input type="text"
-                                name='senha'
-                                placeholder='Senha'
-                                onChange={(e) => setsenha(e.target.value)}
-                                required
-                            />
-                        </div>
-                    </div>
-                    
-                    <div className={style.buttons}>
-                        <input
-                            className={style.btnCadastrar1}
-                            type="submit"
-                            value={"Entrar"}
+        <div className={style.DivImgTelaLogin}>
+            <img className={style.imgTelaLogin} src="./src/assets/maos.jpg" alt="uniao" />
+            <div className={style.FormProject}>
+                <h1 className={style.Titulo}>Oi de novo! <br />Que bom que voltou!</h1>
+                <div className={style.ImputGroup}>
+                    <div className={style.ImputBox}>
+                        <label htmlFor="email">Login</label>
+                        <input type="text"
+                            name='email'
+                            placeholder='Email'
+                            value={email}
+                            onChange={(e) => [setEmail(e.target.value), setError("")]}
+                            required
                         />
-                        <input 
-                            className={style.btnCadastrar2}
-                            type='submit'
-                            value={"Cadastrar"} />
                     </div>
-                </form>
-            </div>
-        </>
-    );
 
+                    <div className={style.ImputBox}>
+                        <label htmlFor="senha">Senha</label>
+                        <input type="password"
+                            name='senha'
+                            placeholder='Senha'
+                            value={senha}
+                            onChange={(e) => [setSenha(e.target.value), setError("")]}
+                            required
+                        />
+                    </div>
+                </div>
+
+                <div className={style.buttons}>
+                    <button className={style.btnCadastrar1} onClick={handleLogin}>Entrar</button>
+
+                    <button
+                        className={style.btnCadastrar2}
+                        type='button'
+                        onClick={() => navigate("/")}
+                    >
+                        Cadastrar
+                    </button>
+                </div>
+            </div>
+            {error && <p className={style.errorMessage}>{error}</p>}
+        </div>
+    );
 }
 
 export default Login;

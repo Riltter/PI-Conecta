@@ -9,8 +9,6 @@
 }
 
 body {
-    background: rgb(40,189,238);
-    background: radial-gradient(circle, rgba(40,189,238,1) 0%, rgba(10,82,102,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +66,7 @@ body {
 .ImputBox {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 10px;
     width: 450px;
 }
 

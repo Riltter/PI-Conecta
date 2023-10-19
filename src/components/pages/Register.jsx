@@ -2,6 +2,8 @@ import style from "./Register.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [nomeCompleto, setNomeCompleto] = useState("");
@@ -11,6 +13,9 @@ function Register() {
   const [senha, setSenha] = useState("");
   const [confirmSenha, setConfirmSenha] = useState("");
   const [nomeUsuario, setNomeUsuario] = useState("");
+
+  const { signup } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -37,6 +42,8 @@ function Register() {
 
     if (response.status === 200) {
       alert("Usuário cadastrado com sucesso!");
+      const res = signup(email, senha);
+      navigate("/");
     } else {
       alert("Erro ao cadastrar usuário!");
     }
@@ -92,7 +99,7 @@ function Register() {
         <p className={style.titleRegister}>
           Quer se conectar aos outros estudantes? Faça o seu cadastro!
         </p>
-        <div className={style.formularioDeCadastro}>
+        <div className={style.formularioDeCadastro}  >
           <form onSubmit={handleSubmit}>
             <div className={style.form_input_group}>
               <div className={style.input_box}>
