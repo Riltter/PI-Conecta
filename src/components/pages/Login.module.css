@@ -32,7 +32,7 @@
   margin-top: 6vh;
   display: flex;
   flex-direction: row;
-  box-shadow: 5px 5px 5px #38535f;
+  box-shadow: 5px 5px 5px 1px #38535f;
 }
 
 .imgTelaLogin {
@@ -51,7 +51,7 @@
   font-weight: 800;
   line-height: normal;
   margin-left: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .FormProject {
@@ -135,7 +135,7 @@
   bottom: 5rem;
   font-family: "Inter", sans-serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 1rem;
   line-height: 24px;
   text-align: center;

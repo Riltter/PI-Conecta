@@ -38,11 +38,7 @@ const Login = () => {
                   onChange={(e) => setsenha(e.target.value)}
                   required
                 />
-                <p className={style.senha}>
-                  <Link to="/" style={{ color: "#38535f" }}>
-                    Esqueceu a senha?
-                  </Link>
-                </p>
+                <p className={style.senha}>Esqueceu a senha?</p>
               </div>
             </div>
 
@@ -52,11 +48,13 @@ const Login = () => {
                 type="submit"
                 value={"Entrar"}
               />
-              <input
-                className={style.btnCadastrar2}
-                type="submit"
-                value={"Cadastrar-se"}
-              />
+              <Link to="/">
+                <input
+                  className={style.btnCadastrar2}
+                  type="submit"
+                  value={"Cadastrar-se"}
+                />
+              </Link>
             </div>
           </form>
         </section>
