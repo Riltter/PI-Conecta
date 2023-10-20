@@ -134,7 +134,7 @@ function Register() {
                   id="cpfId"
                   name="cpf"
                   maxLength="14"
-                  placeholder="000.000.000-00"
+                  placeholder="12345678910"
                   onChange={(e) => setCpf(e.target.value)}
                   required
                 />
