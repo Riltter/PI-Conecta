@@ -21,11 +21,15 @@ function Register() {
     event.preventDefault();
     if (senha === confirmSenha){
         alert("Senhas conferem")
-        handleAddUser();
+        const res = signup(email, senha);
+        navigate("/login");
+        // handleAddUser();
     } else {
         alert("Senhas não conferem")
     }
   };
+
+  
 
   const handleAddUser = async (event) => {
     
@@ -42,8 +46,6 @@ function Register() {
 
     if (response.status === 200) {
       alert("Usuário cadastrado com sucesso!");
-      const res = signup(email, senha);
-      navigate("/");
     } else {
       alert("Erro ao cadastrar usuário!");
     }
@@ -95,7 +97,7 @@ function Register() {
           </h1>
         </div>
       </section>
-      <section className={style.secao_formulario_cadastro}>
+      <section className={style.secao_formulario_cadastro} id="secao_forms">
         <p className={style.titleRegister}>
           Quer se conectar aos outros estudantes? Faça o seu cadastro!
         </p>

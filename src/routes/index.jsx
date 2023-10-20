@@ -7,8 +7,7 @@ import Login from "../components/pages/Login";
 import useAuth from "../hooks/useAuth";
 
 const Private = ({ item: Item }) => {
-    const signed = useAuth();
-    console.log(useAuth);
+    const { signed } = useAuth();
     return signed ? <Item /> : <Login />;
 }
 

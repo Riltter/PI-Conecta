@@ -1,9 +1,10 @@
 import style from './Login.module.css';
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
+    const navigate = useNavigate();
 
     const { signin } = useAuth();
 
@@ -25,7 +26,7 @@ const Login = () => {
             return;
         }
 
-        <Navigate to="/feed" replace={true}/>
+        navigate("/feed");
     };
 
     return (
@@ -55,21 +56,22 @@ const Login = () => {
                             required
                         />
                     </div>
+                    {error && <p className={style.errorMessage}>{error}</p>}
                 </div>
 
                 <div className={style.buttons}>
                     <button className={style.btnCadastrar1} onClick={handleLogin}>Entrar</button>
-
-                    <button
-                        className={style.btnCadastrar2}
-                        type='button'
-                        onClick={() => navigate("/")}
-                    >
-                        Cadastrar
-                    </button>
+                    <Link to="/">
+                        <button
+                            className={style.btnCadastrar2}
+                            type='button'
+                        >
+                            Cadastrar
+                        </button>
+                    </Link>
+                    
                 </div>
             </div>
-            {error && <p className={style.errorMessage}>{error}</p>}
         </div>
     );
 }
