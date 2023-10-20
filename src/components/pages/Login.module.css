@@ -8,16 +8,20 @@
   box-sizing: border-box;
 }
 
-body {
-  background: rgb(40, 189, 238);
-  background: radial-gradient(
-    circle,
-    rgba(40, 189, 238, 1) 0%,
-    rgba(10, 82, 102, 1) 100%
-  );
+.bodyLogin {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: rgb(52, 136, 136);
+  background: linear-gradient(
+    90deg,
+    rgba(52, 136, 136, 1) 15%,
+    rgba(158, 248, 238, 1) 39%,
+    rgba(151, 240, 231, 1) 62%,
+    rgba(52, 136, 136, 1) 87%
+  );
 }
 
 .DivImgTelaLogin {
@@ -25,7 +29,7 @@ body {
   height: 650px;
   border-radius: 50px;
   background-color: white;
-  margin-top: 6vh;
+  margin-top: 1.5vh;
   display: flex;
   flex-direction: row;
   box-shadow: 5px 5px 5px 1px #38535f;

@@ -21,12 +21,16 @@ function Register() {
     event.preventDefault();
     if (senha === confirmSenha) {
       alert("Senhas conferem");
-      const res = signup(email, senha);
-      navigate("/login");
       handleAddUser();
+      loginAutenticate();
     } else {
       alert("Senhas não conferem");
     }
+  };
+
+  const loginAutenticate = (e) => {
+    const res = signup(email, senha);
+    navigate("/login");
   };
 
   const handleAddUser = async (e) => {
