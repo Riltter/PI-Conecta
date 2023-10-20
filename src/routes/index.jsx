@@ -4,6 +4,7 @@ import Register from "../components/pages/Register";
 import Profile from "../components/pages/Profile";
 import Feed from "../components/pages/Feed";
 import Login from "../components/pages/Login";
+import RegisterProject from "../components/pages/RegisterProject";
 import useAuth from "../hooks/useAuth";
 
 const Private = ({ item: Item }) => {
@@ -19,7 +20,10 @@ const RoutesApp = () => {
         <Route path="/feed" element={<Private item={Feed} />} />
         <Route path="/profile" element={<Private item={Profile} />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/registerproject" element={<RegisterProject />} />
+        <Route
+          path="/registerproject"
+          element={<Private item={RegisterProject} />}
+        />
       </Routes>
     </Router>
   );
