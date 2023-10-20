@@ -1,65 +1,89 @@
 import style from "./Login.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import style from "./Login.module.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const { signin } = useAuth();
+
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = () => {
+    if (!email || !senha) {
+      setError("Preencha todos os campos");
+      console.log(error);
+      return;
+    }
+
+    const res = signin(email, senha);
+
+    if (res) {
+      setError(res);
+      return;
+    }
+
+    navigate("/feed");
+  };
+
   return (
-    <>
-      <div className={style.bodyLogin}>
-        <section className={style.DivImgTelaLogin}>
-          <img
-            className={style.imgTelaLogin}
-            src=".\src\assets\maos.jpg"
-            alt="uniao"
-          />
-          <form className={style.FormProject}>
-            <h1 className={style.Titulo}>
-              Oi de novo! <br />
-              Que bom que voltou!
-            </h1>
-            <div className={style.ImputGroup}>
-              <div className={style.ImputBox}>
-                <label htmlFor="email">Login</label>
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="Email"
-                  onChange={(e) => setemail(e.target.value)}
-                  required
-                />
-              </div>
+    <div className={style.DivImgTelaLogin}>
+      <img
+        className={style.imgTelaLogin}
+        src="./src/assets/maos.jpg"
+        alt="uniao"
+      />
+      <div className={style.FormProject}>
+        <h1 className={style.Titulo}>
+          Oi de novo! <br />
+          Que bom que voltou!
+        </h1>
+        <div className={style.ImputGroup}>
+          <div className={style.ImputBox}>
+            <label htmlFor="email">Login</label>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => [setEmail(e.target.value), setError("")]}
+              required
+            />
+          </div>
 
-              <div className={style.ImputBox}>
-                <label htmlFor="senha"></label>
-                <input
-                  type="text"
-                  name="senha"
-                  placeholder="Senha"
-                  onChange={(e) => setsenha(e.target.value)}
-                  required
-                />
-                <p className={style.senha}>Esqueceu a senha?</p>
-              </div>
-            </div>
+          <div className={style.ImputBox}>
+            <label htmlFor="senha">Senha</label>
+            <input
+              type="password"
+              name="senha"
+              placeholder="Senha"
+              value={senha}
+              onChange={(e) => [setSenha(e.target.value), setError("")]}
+              required
+            />
+            <p className={style.senha}>Esqueceu a senha?</p>
+          </div>
+          {error && <p className={style.errorMessage}>{error}</p>}
+        </div>
 
-            <div className={style.buttons}>
-              <input
-                className={style.btnCadastrar1}
-                type="submit"
-                value={"Entrar"}
-              />
-              <Link to="/">
-                <input
-                  className={style.btnCadastrar2}
-                  type="submit"
-                  value={"Cadastrar-se"}
-                />
-              </Link>
-            </div>
-          </form>
-        </section>
+        <div className={style.buttons}>
+          <button className={style.btnCadastrar1} onClick={handleLogin}>
+            Entrar
+          </button>
+          <Link to="/">
+            <button className={style.btnCadastrar2} type="button">
+              Cadastrar-se
+            </button>
+          </Link>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

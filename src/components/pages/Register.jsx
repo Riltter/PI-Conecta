@@ -2,6 +2,8 @@ import style from "./Register.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [nomeCompleto, setNomeCompleto] = useState("");
@@ -12,10 +14,15 @@ function Register() {
   const [confirmSenha, setConfirmSenha] = useState("");
   const [nomeUsuario, setNomeUsuario] = useState("");
 
+  const { signup } = useAuth();
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (senha === confirmSenha) {
       alert("Senhas conferem");
+      const res = signup(email, senha);
+      navigate("/login");
       handleAddUser();
     } else {
       alert("Senhas não conferem");
@@ -87,7 +94,7 @@ function Register() {
           </h1>
         </div>
       </section>
-      <section className={style.secao_formulario_cadastro}>
+      <section className={style.secao_formulario_cadastro} id="secao_forms">
         <p className={style.titleRegister}>
           Quer se conectar aos outros estudantes? Faça o seu cadastro!
         </p>
