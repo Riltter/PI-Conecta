@@ -35,8 +35,8 @@ function Register() {
 
   const handleAddUser = async (e) => {
     const dados = {
-      nome_completo: nomeCompleto,
       email: email,
+      nome_completo: nomeCompleto,
       cpf: cpf,
       senha: senha,
       nome_usuario: nomeUsuario,
@@ -46,9 +46,7 @@ function Register() {
     const response = await axios.post("http://localhost:8800/", dados);
 
     if (response.status === 200) {
-      alert("Usuário cadastrado com sucesso!");
-    } else {
-      alert("Erro ao cadastrar usuário!");
+      return alert("Usuário cadastrado com sucesso!");
     }
   };
 
