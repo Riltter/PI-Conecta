@@ -2,7 +2,7 @@ import style from "./Register.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
@@ -59,14 +59,14 @@ function Register() {
           </Link>
         </div>
         <div className={style.logo_conecta}>
-          <img src=".\src\assets\conectaLogo.png" alt="Imagem Conecta!" />
+          <img src="../public/assets/conectaLogo.png" alt="Imagem Conecta!" />
         </div>
       </section>
       <section>
         <div className={style.div_apresentacao}>
           <img
             className={style.imagem_apresentacao}
-            src=".\src\assets\azul.jpg"
+            src="../public/assets/azul.jpg"
             alt="Pessoas com roupa azul!"
           />
           <h1 className={style.texto_apresentacao1}>
@@ -81,14 +81,14 @@ function Register() {
           </h1>
           <img
             className={style.imagem_apresentacao}
-            src="./src/assets/maos.jpg"
+            src="../public/assets/maos.jpg"
             alt="Maos juntas"
           />
         </div>
         <div className={style.div_apresentacao}>
           <img
             className={style.imagem_apresentacao}
-            src=".\src\assets\pessoas.jpg"
+            src="../public/assets/pessoas.jpg"
             alt="Pessoas trabalhando"
           />
           <h1 className={style.texto_apresentacao1}>

@@ -1,5 +1,5 @@
 
-import Navbar from "../Navbar";
+import Navbar from "../../Navbar";
 
 const ProjectPage = () => {
     return (

@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Register from "../components/pages/Register";
-import Profile from "../components/pages/Profile";
-import Feed from "../components/pages/Feed";
-import Login from "../components/pages/Login";
-import RegisterProject from "../components/pages/RegisterProject";
+import Register from "../components/pages/Register/Register";
+import Profile from "../components/pages/Profile/Profile";
+import Feed from "../components/pages/Feed/Feed";
+import Login from "../components/pages/Login/Login";
+import RegisterProject from "../components/pages/RegisterProject/RegisterProject";
 import useAuth from "../hooks/useAuth";
 
 const Private = ({ item: Item }) => {

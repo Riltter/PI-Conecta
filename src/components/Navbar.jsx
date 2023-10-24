@@ -66,7 +66,7 @@ const Navbar = () => {
     return (
         <>
             <Navegacao>
-                <LogoConecta src="./src/assets/Logo para Navbar.png" alt="Logo" />
+                <LogoConecta src="../public/assets/Logo para Navbar.png" alt="Logo" />
                 <BarraPesquisa>
                     <BotaoBarraPesquisa type="button"><BiSearch /></BotaoBarraPesquisa>
                     <InputPesquisa type="text" placeholder="Pesquisar..." />

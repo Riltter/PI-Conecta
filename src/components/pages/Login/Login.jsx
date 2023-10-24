@@ -1,7 +1,7 @@
 import style from "./Login.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ const Login = () => {
       <div className={style.DivImgTelaLogin}>
         <img
           className={style.imgTelaLogin}
-          src="./src/assets/maos.jpg"
+          src="../public/assets/maos.jpg"
           alt="uniao"
         />
         <div className={style.FormProject}>
