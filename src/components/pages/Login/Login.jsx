@@ -34,7 +34,7 @@ const Login = () => {
       <div className={style.DivImgTelaLogin}>
         <img
           className={style.imgTelaLogin}
-          src="../public/assets/maos.jpg"
+          src="/assets/maos.jpg"
           alt="uniao"
         />
         <div className={style.FormProject}>

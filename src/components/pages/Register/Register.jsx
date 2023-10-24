@@ -59,14 +59,14 @@ function Register() {
           </Link>
         </div>
         <div className={style.logo_conecta}>
-          <img src="../public/assets/conectaLogo.png" alt="Imagem Conecta!" />
+          <img src="/assets/conectaLogo.png" alt="Imagem Conecta!" />
         </div>
       </section>
       <section>
         <div className={style.div_apresentacao}>
           <img
             className={style.imagem_apresentacao}
-            src="../public/assets/azul.jpg"
+            src="/assets/azul.jpg"
             alt="Pessoas com roupa azul!"
           />
           <h1 className={style.texto_apresentacao1}>
@@ -81,14 +81,14 @@ function Register() {
           </h1>
           <img
             className={style.imagem_apresentacao}
-            src="../public/assets/maos.jpg"
+            src="/assets/maos.jpg"
             alt="Maos juntas"
           />
         </div>
         <div className={style.div_apresentacao}>
           <img
             className={style.imagem_apresentacao}
-            src="../public/assets/pessoas.jpg"
+            src="/assets/pessoas.jpg"
             alt="Pessoas trabalhando"
           />
           <h1 className={style.texto_apresentacao1}>
