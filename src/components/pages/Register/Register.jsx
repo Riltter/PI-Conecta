@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import InputMask from "../../../Masked";
 
 function Register() {
   const [nomeCompleto, setNomeCompleto] = useState("");
@@ -138,15 +139,16 @@ function Register() {
               </div>
               <div className={style.input_box}>
                 <label htmlFor="cpf">CPF</label>
-                <input
+                <InputMask
                   type="text"
                   id="cpfId"
                   name="cpf"
-                  maxLength="14"
-                  placeholder="12345678910"
+                  maxLength="11"
+                  value={cpf}
                   onChange={(e) => setCpf(e.target.value)}
                   required
                 />
+                {console.log(cpf)}
               </div>
               <div className={style.input_box}>
                 <label htmlFor="password">Senha</label>
