@@ -62,20 +62,20 @@ function Register() {
           <img src="/assets/conectaLogo.png" alt="Imagem Conecta!" />
         </div>
       </section>
-      <section>
+      <section className={style.secao_apresentacao} >
         <div className={style.div_apresentacao}>
           <img
             className={style.imagem_apresentacao}
             src="/assets/azul.jpg"
             alt="Pessoas com roupa azul!"
           />
-          <h1 className={style.texto_apresentacao1}>
+          <h1 className={style.texto_apresentacao}>
             Conectando graduandos para potencializar a eficiência de projetos em
             desenvolvimento.
           </h1>
         </div>
-        <div className={style.div_apresentacao2}>
-          <h1 className={style.texto_apresentacao2}>
+        <div className={style.div_apresentacao}>
+          <h1 className={style.texto_apresentacao}>
             Convide pessoas que entendem do assunto para te ajudar no seu
             projeto.
           </h1>
@@ -91,8 +91,8 @@ function Register() {
             src="/assets/pessoas.jpg"
             alt="Pessoas trabalhando"
           />
-          <h1 className={style.texto_apresentacao1}>
-            Faça networking com granduandos da sua área e de outram também!
+          <h1 className={style.texto_apresentacao}>
+          Amplie sua rede de contatos interagindo com graduandos tanto da sua área de estudo quanto de outras disciplinas.
           </h1>
         </div>
       </section>

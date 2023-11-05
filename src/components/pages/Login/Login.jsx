@@ -2,6 +2,9 @@ import style from "./Login.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import Botao1 from "../../Botao1";
+import Botao2 from "../../Botao2";
+import Botao2reverse from "../../Botao2reverse";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -68,17 +71,13 @@ const Login = () => {
               <p className={style.senha}>Esqueceu a senha?</p>
             </div>
             {error && <p className={style.errorMessage}>{error}</p>}
-          </div>
 
-          <div className={style.buttons}>
-            <button className={style.btnCadastrar1} onClick={handleLogin}>
-              Entrar
-            </button>
-            <Link to="/">
-              <button className={style.btnCadastrar2} type="button">
-                Cadastrar-se
-              </button>
-            </Link>
+            <div className={style.buttons}>
+              <Botao1 name={"Entrar"} onClick={handleLogin} />
+              <Link to="/">
+                <Botao2reverse name={"Cadastrar-se"} />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
