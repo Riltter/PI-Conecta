@@ -1,10 +1,11 @@
 import style from "./Register.module.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import InputMask from "../../../Masked";
+import { ToastContainer, toast } from "react-toastify";
 
 function Register() {
   const [nomeCompleto, setNomeCompleto] = useState("");
@@ -15,6 +16,7 @@ function Register() {
   const [confirmSenha, setConfirmSenha] = useState("");
   const [nomeUsuario, setNomeUsuario] = useState("");
 
+  //Autorização
   const { signup } = useAuth();
   const navigate = useNavigate();
 
@@ -22,8 +24,7 @@ function Register() {
     event.preventDefault();
     if (senha === confirmSenha) {
       alert("Senhas conferem");
-      handleAddUser();
-      loginAutenticate();
+      handleGetUser();
     } else {
       alert("Senhas não conferem");
     }
@@ -34,6 +35,26 @@ function Register() {
     navigate("/login");
   };
 
+  const notify = () => toast.success("Usuário cadastrado com successo!");
+
+  //Verifica se o email já existe no banco
+  const handleGetUser = async () => {
+    try {
+      const response = await axios.get("http://localhost:8800/checkEmail", {
+        params: { email },
+      });
+
+      if (response.data.exists) {
+        alert("O email já existe!");
+      } else {
+        handleAddUser();
+      }
+    } catch (error) {
+      console.error("Erro ao verificar o email: ", error);
+    }
+  };
+
+  // inserir usuários no banco
   const handleAddUser = async (e) => {
     const dados = {
       email: email,
@@ -44,15 +65,29 @@ function Register() {
       data_de_nascimento: dataNascimento,
     };
 
-    const response = await axios.post("http://localhost:8800/", dados);
-
+    const response = await axios.post("http://localhost:8800", dados);
     if (response.status === 200) {
-      return alert("Usuário cadastrado com sucesso!");
+      alert("Cadastrado com sucesso!");
+    } else {
+      alert("Ocorreu um erro ao cadastrar o usuário.");
     }
+    loginAutenticate();
   };
 
   return (
     <div className="telaregister">
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <section className={style.secao_logo}>
         <div className={style.div_css}>
           <Link className={style.link_button} to="/login">

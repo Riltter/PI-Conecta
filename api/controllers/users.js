@@ -1,12 +1,20 @@
 import { db } from "../Database/db.js";
 
-export const getUsers = (_, res) => {
-  const q = "SELECT * FROM usuario";
+export const getUsers = (req, res) => {
+  const emailToCheck = req.query.email;
+  const query = "SELECT email FROM usuario WHERE email = ?";
 
-  db.query(q, (err, data) => {
-    if (err) return res.json(err);
-
-    return res.status(200).json(data);
+  db.query(query, [emailToCheck], (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Erro ao verificar o email." });
+    } else {
+      if (results.length > 0) {
+        res.status(200).json({ exists: true });
+      } else {
+        res.status(200).json({ exists: false });
+      }
+    }
   });
 };
 

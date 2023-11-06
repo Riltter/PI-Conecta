@@ -8,12 +8,12 @@ import {
 
 const router = express.Router();
 
-router.get("/", getUsers);
+router.get("/checkemail", getUsers);
 
 router.post("/", addUsers);
 
-router.put("/:cpf", updateUsers);
+router.put("/:email", updateUsers);
 
-router.delete("/:cpf", deleteUsers);
+router.delete("/:email", deleteUsers);
 
 export default router;
