@@ -9,7 +9,6 @@ const Navegacao = styled.nav`
     width: 100%;
     height: 5rem;
     background-color: white;
-    position: absolute;
 `;
 
 const LogoConecta = styled.img`

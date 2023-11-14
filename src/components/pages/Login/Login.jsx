@@ -73,9 +73,9 @@ const Login = () => {
             {error && <p className={style.errorMessage}>{error}</p>}
 
             <div className={style.buttons}>
-              <Botao1 name={"Entrar"} onClick={handleLogin} />
+              <Botao1 name={"Entrar"} onClick={handleLogin} style={{width: "20rem"}}/>
               <Link to="/">
-                <Botao2reverse name={"Cadastrar-se"} />
+                <Botao2reverse name={"Cadastrar-se"} style={{width: "20rem"}}/>
               </Link>
             </div>
           </div>
