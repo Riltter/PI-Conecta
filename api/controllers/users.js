@@ -10,6 +10,7 @@ export const getUsers = (_, res) => {
   });
 };
 
+
 export const addUsers = (req, res) => {
   const q =
     "INSERT INTO usuario(`cpf`, `nome_completo`, `nome_usuario`, `email`, `data_de_nascimento`, `senha`) VALUES(?)";

@@ -6,6 +6,7 @@ import Feed from "../components/pages/Feed/Feed";
 import Login from "../components/pages/Login/Login";
 import RegisterProject from "../components/pages/RegisterProject/RegisterProject";
 import useAuth from "../hooks/useAuth";
+import EditProfile from "../components/pages/EditProfile/EditProfile";
 
 const Private = ({ item: Item }) => {
   const { signed } = useAuth();
@@ -24,6 +25,7 @@ const RoutesApp = () => {
           path="/registerproject"
           element={<Private item={RegisterProject} />}
         />
+        <Route path="/editprofile" element={<EditProfile/>}/>
       </Routes>
     </Router>
   );

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
   font-family: "Inter", sans-serif;
-  font-weight: bold;
   color: #fff;
   font-size: 1rem;
   width: 9.063rem;
@@ -12,7 +11,6 @@ const StyledButton = styled.button`
   border: 0.2rem solid rgba(242, 86, 30, 1);
   cursor: pointer;
   text-align: center;
-  margin-bottom: 10px;
   transition: background 0.8s;
 
   &:hover {

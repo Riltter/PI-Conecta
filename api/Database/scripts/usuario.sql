@@ -1,8 +1,12 @@
 CREATE TABLE `conecta`.`usuario` (
-  `email` VARCHAR(35) NOT NULL,
-  `cpf` VARCHAR(11) NOT NULL,
-  `nome_completo` VARCHAR(25) NOT NULL,
-  `nome_usuario` VARCHAR(15) NOT NULL,
-  `data_de_nascimento` DATE NOT NULL,
-  `senha` VARCHAR(12) NOT NULL,
-  PRIMARY KEY (`email`));
+  `email` varchar(30) NOT NULL,
+  `cpf` varchar(20) NOT NULL,
+  `nome_completo` varchar(45) NOT NULL,
+  `nome_usuario` varchar(45) NOT NULL,
+  `data_de_nascimento` date NOT NULL,
+  `senha` varchar(45) NOT NULL,
+  `campus` varchar(45) DEFAULT NULL,
+  `sobre` varchar(45) DEFAULT NULL,
+  `linkedin` varchar(45) DEFAULT NULL,
+  `instagram` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`email`)
