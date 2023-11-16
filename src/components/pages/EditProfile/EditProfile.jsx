@@ -8,7 +8,7 @@ const EditProfile = () => {
 
     const [userData, setUserData] = useState({
         userName: "",
-        campus: "",
+        campus: "Asa Norte", // Valor padrão ou escolha um valor padrão apropriado
         sobre: "",
         linkedin: "",
         instagram: "",
@@ -18,22 +18,26 @@ const EditProfile = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                // Substitua 'pato@gmail.com' pela variável ou lógica que determina o e-mail a ser pesquisado
                 const emailteste = 'kenedy@gmail.com';
                 const response = await axios.get(`http://localhost:8800/`);
-                const user = response.data.find((user) => user.email === emailteste);
 
-                if (user) {
-                    setUserData({
-                        userName: user.nome_usuario,
-                        campus: user.campus,
-                        sobre: user.sobre,
-                        linkedin: user.linkedin,
-                        instagram: user.instagram,
-                        email: user.email,
-                    });
+                if (response.data) { // Verifica se há dados na resposta
+                    const user = response.data.find((user) => user.email === emailteste);
+
+                    if (user) {
+                        setUserData({
+                            userName: user.nome_usuario,
+                            campus: user.campus,
+                            sobre: user.sobre,
+                            linkedin: user.linkedin,
+                            instagram: user.instagram,
+                            email: user.email,
+                        });
+                    } else {
+                        console.error("Usuário não encontrado.");
+                    }
                 } else {
-                    console.error("Usuário não encontrado.");
+                    console.error("Dados não encontrados na resposta.");
                 }
             } catch (error) {
                 console.error("Erro ao buscar dados do usuário:", error);
@@ -43,7 +47,25 @@ const EditProfile = () => {
         fetchUserData();
     }, []);
 
-    // fazer com que após a pesquisa no banco ocorra os dados sejam colcoados nos inputs
+
+    const handleSave = async () => {
+        try {
+            await axios.put("http://localhost:8800/", {
+                nome_usuario: userData.userName,
+                campus: userData.campus,
+                sobre: userData.sobre,
+                linkedin: userData.linkedin,
+                instagram: userData.instagram,
+                email: userData.email,
+            });
+
+            console.log("Dados salvos com sucesso!");
+        } catch (error) {
+            console.error("Erro ao salvar dados:", error);
+        }
+    };
+
+
 
     return (
         <>
@@ -60,18 +82,21 @@ const EditProfile = () => {
                                 type="text"
                                 id="nameUserid"
                                 name="nameUser"
-                                placeholder={userData.userName}
-
+                                defaultValue={userData.userName}
+                                onChange={(e) => setUserData({ ...userData, userName: e.target.value })}
                             />
                         </InputBox>
                         <InputBox>
                             <InputBoxLabel htmlFor="campus">Campus</InputBoxLabel>
                             <ContainerCampus>
                                 <BsFillMortarboardFill style={{ fontSize: '2rem' }} />
-                                <SelecaoCampus>
-                                    <option value="opcao1">Asa Norte</option>
-                                    <option value="opcao2">Taguatinga</option>
-                                    <option value="opcao3">Ambos</option>
+                                <SelecaoCampus
+                                    value={userData.campus}
+                                    onChange={(e) => setUserData({ ...userData, campus: e.target.value })}
+                                >
+                                    <option value="Asa Norte">Asa Norte</option>
+                                    <option value="Taguatinga">Taguatinga</option>
+                                    <option value="Ambos">Ambos</option>
                                 </SelecaoCampus>
                             </ContainerCampus>
                         </InputBox>
@@ -81,8 +106,11 @@ const EditProfile = () => {
                             <InputBoxLabel id="nameUserLabel" htmlFor="">
                                 Fale sobre você
                             </InputBoxLabel>
-                            <InputTextArea rows="10" />
-
+                            <InputTextArea
+                                rows="10"
+                                defaultValue={userData.sobre}
+                                onChange={(e) => setUserData({ ...userData, sobre: e.target.value })}
+                            />
                         </InputBox>
                     </ContainerInputs>
                     <ContainerInputs>
@@ -94,7 +122,8 @@ const EditProfile = () => {
                                 type="text"
                                 id="linkedinLinkid"
                                 name="linkedinLink"
-
+                                defaultValue={userData.linkedin}
+                                onChange={(e) => setUserData({ ...userData, linkedin: e.target.value })}
                             />
                         </InputBox>
                         <InputBox>
@@ -105,23 +134,13 @@ const EditProfile = () => {
                                 type="text"
                                 id="instagramLinkid"
                                 name="instagramLink"
-
-                            />
-                        </InputBox>
-                        <InputBox>
-                            <InputBoxLabel htmlFor="email">
-                                Email
-                            </InputBoxLabel>
-                            <InputBoxInput
-                                type="email"
-                                id="emailid"
-                                name="email"
-
+                                defaultValue={userData.instagram}
+                                onChange={(e) => setUserData({ ...userData, instagram: e.target.value })}
                             />
                         </InputBox>
                     </ContainerInputs>
                 </ContainerInputsAll>
-                <StyledButton>Salvar alterações</StyledButton>
+                <StyledButton onClick={(e) => handleSave()}>Salvar alterações</StyledButton>
 
             </Container>
         </>

@@ -31,24 +31,22 @@ export const addUsers = (req, res) => {
   });
 };
 
-export const updateUsers = (req, res) => {
+export const updateUser = (req, res) => {
+  const { nome_usuario, campus, sobre, linkedin, instagram } = req.body;
+  const email = req.params.email;
+
   const q =
-    "UPDATE usuario SET `nome_completo` = ?, `nome_usuario` = ?, `email` = ?, `data_de_nascimento` = ?, `senha` = ? WHERE `cpf` = ?";
+    "UPDATE usuario SET `nome_usuario`=?, `campus`=?, `sobre`=?, `linkedin`=?, `instagram`=? WHERE `email`=?";
 
-  const values = [
-    req.body.nome_completo,
-    req.body.nome_usuario,
-    req.body.email,
-    req.body.data_de_nascimento,
-    req.body.senha,
-  ];
+  const values = [nome_usuario, campus, sobre, linkedin, instagram, email];
 
-  db.query(q, [...values, req.params.cpf], (err) => {
+  db.query(q, values, (err) => {
     if (err) return res.json(err);
 
-    return res.status(200).json("Dados atualizados com sucesso.");
+    return res.status(200).json("Dados do usuário atualizados com sucesso.");
   });
 };
+
 
 export const deleteUsers = (req, res) => {
   const q = "DELETE FROM usuario WHERE `cpf` = ?";
