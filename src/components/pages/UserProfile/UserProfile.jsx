@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import style from "./UserProfile.css";
+import style from "./UserProfile.module.css";
 import Navbar from "../../Navbar";
 import { Link } from "react-router-dom";
 import { BiLogoLinkedinSquare, BiLogoInstagram } from "react-icons/bi";
@@ -27,8 +26,8 @@ const UserProfile = () => {
     }
 
     return (
-        <div>
-            {/*{<Navbar />}*/}
+        <>
+            <Navbar />
             <div className={style.bodyUserProfile}>
                 <div className={style.coluna1UserProfile}>
                     <Link to="/PaginaMeusProjetos">
@@ -67,7 +66,7 @@ const UserProfile = () => {
                         <button className={style.btnUploadCurriculo} onClick={(e) => downloadFile()}>Download Arquivo</button>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 

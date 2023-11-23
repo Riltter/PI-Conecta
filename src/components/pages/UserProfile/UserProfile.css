@@ -1,5 +1,0 @@
-.Campus {
-    display: inline-block;
-    width: 50%; /* ou a largura desejada */
-    box-sizing: border-box; /* para incluir padding e borda na largura */
-}

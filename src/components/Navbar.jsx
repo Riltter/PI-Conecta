@@ -5,9 +5,9 @@ import { RiUserSearchLine } from "react-icons/ri";
 const Navegacao = styled.nav`
     display: flex;
     align-items: center;
-    height: 4rem;
+    height: 4em;
     background-color: white;
-    padding: 0 1rem; 
+    padding: 0 8em; 
 
 `;
 
@@ -25,6 +25,7 @@ const BarraPesquisa = styled.div`
     border-radius: 5px;
     flex: 1.5;
     background-color: #f0f0f0;
+    margin: 0 3em;
 
     @media (max-width: 768px) {
        width: 60vw;
@@ -35,7 +36,7 @@ const BarraPesquisa = styled.div`
 const InputPesquisa = styled.input`
     flex-grow: 1; 
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 10px 3em;
     border: none;
     outline: none;
     background-color: #f0f0f0;
