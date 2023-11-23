@@ -4,30 +4,32 @@ import { RiUserSearchLine } from "react-icons/ri";
 
 const Navegacao = styled.nav`
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 5rem;
+    height: 4rem;
     background-color: white;
-    position: absolute;
+    padding: 0 1rem; 
+
 `;
 
 const LogoConecta = styled.img`
     max-height: 100%;
-    margin-right: 20px;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const BarraPesquisa = styled.div`
     display: flex;
     align-items: center;
-    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    flex-grow: 0;
-    width: 900px;
-    margin-right: 20px;
-    position: relative;
+    flex: 1.5;
     background-color: #f0f0f0;
+
+    @media (max-width: 768px) {
+       width: 60vw;
+    }
+    
 `;
 
 const InputPesquisa = styled.input`
@@ -37,24 +39,23 @@ const InputPesquisa = styled.input`
     border: none;
     outline: none;
     background-color: #f0f0f0;
+    @media (max-width: 768px) {
+       width: 50vw;
+    }
+    
 `;
 
 const BotaoBarraPesquisa = styled.button`
     font-size: 1.4rem;
     padding: 10px;
-    background-color:#f0f0f0;
+    background-color: #f0f0f0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 `;
 
-const IconesNavegacao = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
 const BotaoIconesNavegacao = styled.button`
-    font-size: 2.4rem;
+    font-size: 2.2rem; /* Ajuste o tamanho desejado aqui */
     padding: 10px;
     background-color: white;
     border: none;
@@ -62,25 +63,37 @@ const BotaoIconesNavegacao = styled.button`
     cursor: pointer;
 `;
 
+const IconesNavegacao = styled.div`
+    @media (max-width: 768px){
+        display: none;
+    }
+`;
+const IconesNavegacaoMobile = styled.div`
+    @media (min-width: 768px){
+        display: none;
+    }
+`
+
 const Navbar = () => {
     return (
-        <>
-            <Navegacao>
-                <LogoConecta src="../public/assets/Logo para Navbar.png" alt="Logo" />
-                <BarraPesquisa>
-                    <BotaoBarraPesquisa type="button"><BiSearch /></BotaoBarraPesquisa>
-                    <InputPesquisa type="text" placeholder="Pesquisar..." />
-                    <BotaoBarraPesquisa type="button"><BiSliderAlt /></BotaoBarraPesquisa>
-                </BarraPesquisa>
-                <IconesNavegacao>
-                    <BotaoIconesNavegacao type="button"><BiWorld /></BotaoIconesNavegacao>
-                    <BotaoIconesNavegacao type="button"><RiUserSearchLine /></BotaoIconesNavegacao>
-                    <BotaoIconesNavegacao type="button"><BiBell /></BotaoIconesNavegacao>
-                    <BotaoIconesNavegacao type="button"><BiMenu /></BotaoIconesNavegacao>
-                </IconesNavegacao>
-            </Navegacao>
-        </>
-    )
+        <Navegacao>
+            <LogoConecta src="/assets/Logo para Navbar.png" alt="Logo" />
+            <BarraPesquisa>
+                <BotaoBarraPesquisa type="button"><BiSliderAlt /></BotaoBarraPesquisa>
+                <InputPesquisa type="text" placeholder="Pesquisar..." />
+                <BotaoBarraPesquisa type="button"><BiSearch /></BotaoBarraPesquisa>
+            </BarraPesquisa>
+            <IconesNavegacao>
+                <BotaoIconesNavegacao type="button"><BiWorld /></BotaoIconesNavegacao>
+                <BotaoIconesNavegacao type="button"><RiUserSearchLine /></BotaoIconesNavegacao>
+                <BotaoIconesNavegacao type="button"><BiBell /></BotaoIconesNavegacao>
+                <BotaoIconesNavegacao type="button"><BiMenu /></BotaoIconesNavegacao>
+            </IconesNavegacao>
+            <IconesNavegacaoMobile>
+                <BotaoIconesNavegacao type="button"><BiMenu /></BotaoIconesNavegacao>
+            </IconesNavegacaoMobile>
+        </Navegacao>
+    );
 }
 
-export default Navbar
+export default Navbar;
