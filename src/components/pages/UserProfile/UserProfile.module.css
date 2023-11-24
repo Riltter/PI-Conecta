@@ -1,5 +1,56 @@
 .bodyUserProfile {
-    background-color: red;
+    background-color: white;
     width: 100vw;
+}
 
+.bodyUserProfile {
+    display: flex;
+    justify-content: center;
+    
+    width: 80em;
+}
+
+.capaUserProfile {
+    display: flex;
+    background-image: linear-gradient(to bottom,rgba(229,119,72,1), rgba(255,0,0,0));
+}
+
+.fotoDePerfil {
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* Ensure the image stays within the circular mask */
+}
+
+.fotoDePerfil img {
+    width: 100%;
+    /* Make the image fill the circular container */
+    height: auto;
+    /* Maintain the aspect ratio of the image */
+}
+
+.nomeDePerfil {
+    margin: 30px;
+    padding-right: 20em;
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-start;
+
+.retanguloCinza {
+background-color: #e6e6e6;
+height: 40px;
+width: 40px;
+/*nao funcionaaaaaa*/
+    }
+
+.btnEditProfile {
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    
+}
 }
