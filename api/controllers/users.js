@@ -1,4 +1,5 @@
 import { db } from "../Database/db.js";
+import bcrypt from "bcrypt";
 
 export const getUsers = (req, res) => {
   const emailToCheck = req.query.email;
@@ -13,6 +14,28 @@ export const getUsers = (req, res) => {
         res.status(200).json({ exists: true });
       } else {
         res.status(200).json({ exists: false });
+      }
+    }
+  });
+};
+
+export const login = async (req, res) => {
+  const { email, senha } = req.body;
+
+  const query = "SELECT email, senha FROM usuario WHERE email = ?";
+  db.query(query, [email], async (err, results) => {
+    if (err) {
+      res.status(500).json({ error: "Erro interno" });
+    } else if (results.length === 0) {
+      res.status(401).json({ error: "Credenciais inválidas" });
+    } else {
+      const user = results[0];
+
+      // compara a senha da requisição com a do bd
+      if (senha != user.senha) {
+        res.status(401).json({ error: "Credenciais inválidas" });
+      } else {
+        res.status(200).json({ message: "Login bem-sucedido" });
       }
     }
   });

@@ -2,31 +2,32 @@ import style from "./Login.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
-
   const { signin } = useAuth();
-
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!email || !senha) {
       setError("Preencha todos os campos");
-      console.log(error);
       return;
     }
 
-    const res = signin(email, senha);
+    const response = await axios.post("http://localhost:8800/login", {
+      email,
+      senha,
+    });
 
-    if (res) {
-      setError(res);
-      return;
+    // Se a resposta for bem-sucedida
+    if (response.status === 200) {
+      navigate("/feed");
+    } else {
+      setError(response.data.error);
     }
-
-    navigate("/feed");
   };
 
   return (
@@ -65,7 +66,9 @@ const Login = () => {
                 onChange={(e) => [setSenha(e.target.value), setError("")]}
                 required
               />
-              <p className={style.senha}>Esqueceu a senha?</p>
+              <div className={style.senha}>
+                <a href="/forgotPassword">Esqueceu a senha?</a>
+              </div>
             </div>
             {error && <p className={style.errorMessage}>{error}</p>}
           </div>

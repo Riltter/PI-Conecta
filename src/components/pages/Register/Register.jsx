@@ -1,6 +1,6 @@
 import style from "./Register.module.css";
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
@@ -34,8 +34,6 @@ function Register() {
     const res = signup(email, senha);
     navigate("/login");
   };
-
-  const notify = () => toast.success("Usuário cadastrado com successo!");
 
   //Verifica se o email já existe no banco
   const handleGetUser = async () => {

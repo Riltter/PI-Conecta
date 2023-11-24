@@ -4,11 +4,14 @@ import {
   addUsers,
   updateUsers,
   deleteUsers,
+  login,
 } from "../controllers/users.js";
 
 const router = express.Router();
 
 router.get("/checkemail", getUsers);
+
+router.post("/login", login);
 
 router.post("/", addUsers);
 

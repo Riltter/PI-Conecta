@@ -4,6 +4,7 @@ import Register from "../components/pages/Register/Register";
 import Profile from "../components/pages/Profile/Profile";
 import Feed from "../components/pages/Feed/Feed";
 import Login from "../components/pages/Login/Login";
+import ForgotPassword from "../components/pages/Login/ForgotPassword";
 import RegisterProject from "../components/pages/RegisterProject/RegisterProject";
 import useAuth from "../hooks/useAuth";
 
@@ -20,6 +21,7 @@ const RoutesApp = () => {
         <Route path="/feed" element={<Private item={Feed} />} />
         <Route path="/profile" element={<Private item={Profile} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route
           path="/registerproject"
           element={<Private item={RegisterProject} />}
