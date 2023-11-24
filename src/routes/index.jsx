@@ -18,7 +18,7 @@ const RoutesApp = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Register />} />
-        <Route path="/feed" element={<Private item={Feed} />} />
+        <Route path="/feed" element={<Feed />} />
         <Route path="/profile" element={<Private item={Profile} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />

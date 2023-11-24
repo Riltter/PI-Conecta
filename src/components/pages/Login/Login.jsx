@@ -6,7 +6,6 @@ import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { signin } = useAuth();
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
@@ -16,17 +15,22 @@ const Login = () => {
       setError("Preencha todos os campos");
       return;
     }
+    try {
+      const response = await axios.post("http://localhost:8800/login", {
+        email,
+        senha,
+      });
 
-    const response = await axios.post("http://localhost:8800/login", {
-      email,
-      senha,
-    });
-
-    // Se a resposta for bem-sucedida
-    if (response.status === 200) {
-      navigate("/feed");
-    } else {
-      setError(response.data.error);
+      if (response.status === 200) {
+        navigate("/feed");
+        alert("Bem vindo!");
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        setError("Credenciais inválidas");
+      } else {
+        console.error("Erro ao fazer login:", error.message);
+      }
     }
   };
 

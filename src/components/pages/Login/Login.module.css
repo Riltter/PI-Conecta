@@ -134,6 +134,14 @@
   margin-bottom: 10px;
 }
 
+.btnCadastrar1:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    rgba(242, 87, 30, 0.772),
+    rgba(250, 130, 16, 0.772)
+  );
+}
+
 .btnCadastrar2 {
   width: 9.063rem;
   height: 2.813rem;
