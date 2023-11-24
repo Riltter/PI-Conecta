@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import routerRegister from "./routes/register.js";
+import session from "express-session";
 
 const app = express();
 

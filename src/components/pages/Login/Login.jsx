@@ -2,34 +2,36 @@ import style from "./Login.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-import Botao1 from "../../Botao1";
-import Botao2 from "../../Botao2";
-import Botao2reverse from "../../Botao2reverse";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
-
-  const { signin } = useAuth();
-
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!email || !senha) {
       setError("Preencha todos os campos");
-      console.log(error);
       return;
     }
+    try {
+      const response = await axios.post("http://localhost:8800/login", {
+        email,
+        senha,
+      });
 
-    const res = signin(email, senha);
-
-    if (res) {
-      setError(res);
-      return;
+      if (response.status === 200) {
+        navigate("/feed");
+        alert("Bem vindo!");
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        setError("Credenciais inválidas");
+      } else {
+        console.error("Erro ao fazer login:", error.message);
+      }
     }
-
-    navigate("/feed");
   };
 
   return (
@@ -68,16 +70,21 @@ const Login = () => {
                 onChange={(e) => [setSenha(e.target.value), setError("")]}
                 required
               />
-              <p className={style.senha}>Esqueceu a senha?</p>
+              <div className={style.senha}>
+                <a href="/forgotPassword">Esqueceu a senha?</a>
+              </div>
             </div>
             {error && <p className={style.errorMessage}>{error}</p>}
 
-            <div className={style.buttons}>
-              <Botao1 name={"Entrar"} onClick={handleLogin} style={{width: "20rem"}}/>
-              <Link to="/">
-                <Botao2reverse name={"Cadastrar-se"} style={{width: "20rem"}}/>
-              </Link>
-            </div>
+          <div className={style.buttons}>
+            <button className={style.btnCadastrar1} onClick={handleLogin}>
+              Entrar
+            </button>
+            <Link to="/">
+              <button className={style.btnCadastrar2} type="button">
+                Cadastrar-se
+              </button>
+            </Link>
           </div>
         </div>
       </div>
