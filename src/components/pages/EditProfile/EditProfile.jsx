@@ -26,12 +26,14 @@ const EditProfile = () => {
     email: "",
   });
 
-  const emailteste = "kenedy@gmail.com";
+  const userLocalStorage = localStorage.getItem("user_token");
+  const email = JSON.parse(userLocalStorage).email;
+  console.log(email);
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8800/edit?email=${emailteste}`);
+        const response = await axios.get(`http://localhost:8800/edit?email=${email}`);
         console.log("passou bitch");
 
         if (response.data) {

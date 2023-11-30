@@ -10,3 +10,4 @@ CREATE TABLE `conecta`.`usuario` (
   `linkedin` varchar(45) DEFAULT NULL,
   `instagram` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`email`)
+)

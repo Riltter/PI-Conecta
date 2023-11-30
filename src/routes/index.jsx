@@ -8,6 +8,7 @@ import ForgotPassword from "../components/pages/Login/ForgotPassword";
 import RegisterProject from "../components/pages/RegisterProject/RegisterProject";
 import useAuth from "../hooks/useAuth";
 import EditProfile from "../components/pages/EditProfile/EditProfile";
+import ProjectPage from "../components/pages/ProjectPage/ProjectPage";
 
 const Private = ({ item: Item }) => {
   const { signed } = useAuth();
@@ -19,15 +20,13 @@ const RoutesApp = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Register />} />
-        <Route path="/feed" element={<Feed />} />
+        <Route path="/feed" element={<Private item={Feed} />} />
         <Route path="/profile" element={<Private item={Profile} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgotPassword" element={<ForgotPassword />} />
-        <Route
-          path="/registerproject"
-          element={<Private item={RegisterProject} />}
-        />
-        <Route path="/editprofile" element={<EditProfile />} />
+        <Route path="/registerproject" element={<Private item={RegisterProject} />} />
+        <Route path="/editprofile" element={<Private item={EditProfile} />} />
+        <Route path="/projectpage" element={<Private item={ProjectPage} />} />
       </Routes>
     </Router>
   );

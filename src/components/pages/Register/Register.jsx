@@ -17,7 +17,7 @@ function Register() {
   const [nomeUsuario, setNomeUsuario] = useState("");
 
   //Autorização
-  const { signup } = useAuth();
+ 
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -30,11 +30,7 @@ function Register() {
     }
   };
 
-  const loginAutenticate = (e) => {
-    const res = signup(email, senha);
-    navigate("/login");
-  };
-
+ 
   //Verifica se o email já existe no banco
   const handleGetUser = async () => {
     try {
@@ -70,7 +66,7 @@ function Register() {
     } else {
       alert("Ocorreu um erro ao cadastrar o usuário.");
     }
-    //loginAutenticate();
+    
   };
 
   return (

@@ -10,6 +10,8 @@ const Login = () => {
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
 
+  const { signin} = useAuth();
+
   const handleLogin = async () => {
     if (!email || !senha) {
       setError("Preencha todos os campos");
@@ -22,6 +24,7 @@ const Login = () => {
       });
 
       if (response.status === 200) {
+        await signin(email, senha);
         navigate("/feed");
         alert("Bem vindo!");
       }
@@ -33,6 +36,7 @@ const Login = () => {
       }
     }
   };
+  
 
   return (
     <div className={style.bodyLogin}>
