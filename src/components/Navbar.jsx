@@ -1,18 +1,25 @@
 import styled from "styled-components";
 import { BiSearch, BiSliderAlt, BiWorld, BiBell, BiMenu } from "react-icons/bi";
 import { RiUserSearchLine } from "react-icons/ri";
+import { useNavigate } from "react-router";
+
 
 const Navegacao = styled.nav`
     display: flex;
-    align-items: center;
+    justify-content: space-between;
     height: 4rem;
     background-color: white;
-    padding: 0 1rem; 
+    padding: 0 4em; 
+
+    @media (max-width: 768px) {
+        padding: 0 1em;
+}
 
 `;
 
 const LogoConecta = styled.img`
     max-height: 100%;
+    cursor: pointer;
     @media (max-width: 768px) {
         display: none;
     }
@@ -21,11 +28,10 @@ const LogoConecta = styled.img`
 const BarraPesquisa = styled.div`
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
     border-radius: 5px;
     flex: 1.5;
-    background-color: #f0f0f0;
-
+   
+    max-width: 30vw;
     @media (max-width: 768px) {
        width: 60vw;
     }
@@ -46,7 +52,7 @@ const InputPesquisa = styled.input`
 `;
 
 const BotaoBarraPesquisa = styled.button`
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     padding: 10px;
     background-color: #f0f0f0;
     border: none;
@@ -55,12 +61,13 @@ const BotaoBarraPesquisa = styled.button`
 `;
 
 const BotaoIconesNavegacao = styled.button`
-    font-size: 2.2rem; /* Ajuste o tamanho desejado aqui */
-    padding: 10px;
+    font-size: 2rem; /* Ajuste o tamanho desejado aqui */
+    padding:  10px;
     background-color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+
 `;
 
 const IconesNavegacao = styled.div`
@@ -73,16 +80,28 @@ const IconesNavegacaoMobile = styled.div`
         display: none;
     }
 `
+const Container1 = styled.div`
+    display: flex;
+`
+
+
+
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
     return (
         <Navegacao>
-            <LogoConecta src="/assets/Logo para Navbar.png" alt="Logo" />
+            <Container1 >
+            <LogoConecta src="/assets/Logo para Navbar.png" alt="Logo" onClick={() => navigate("/")} />
             <BarraPesquisa>
                 <BotaoBarraPesquisa type="button"><BiSliderAlt /></BotaoBarraPesquisa>
                 <InputPesquisa type="text" placeholder="Pesquisar..." />
                 <BotaoBarraPesquisa type="button"><BiSearch /></BotaoBarraPesquisa>
             </BarraPesquisa>
+            </Container1>
+            <Container1>
             <IconesNavegacao>
                 <BotaoIconesNavegacao type="button"><BiWorld /></BotaoIconesNavegacao>
                 <BotaoIconesNavegacao type="button"><RiUserSearchLine /></BotaoIconesNavegacao>
@@ -92,6 +111,7 @@ const Navbar = () => {
             <IconesNavegacaoMobile>
                 <BotaoIconesNavegacao type="button"><BiMenu /></BotaoIconesNavegacao>
             </IconesNavegacaoMobile>
+            </Container1>
         </Navegacao>
     );
 }

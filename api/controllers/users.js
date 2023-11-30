@@ -19,7 +19,8 @@ export const getUsers = (req, res) => {
 };
 
 export const getUser = (req, res) => {
-  const { email } = req.body;
+  console.log("ENTREIIIIII")
+  const { email } = req.query; // Use req.query para obter parâmetros de consulta
   const query =
     "SELECT email, nome_usuario, campus, sobre, linkedin, instagram FROM usuario WHERE email = ?";
 
@@ -28,13 +29,14 @@ export const getUser = (req, res) => {
       res.status(500).json({ error: "Erro" });
     } else {
       if (result.length > 0) {
-        res.status(200).json({ userData: result[0] }); // Retorna o primeiro resultado encontrado para o email
+        res.status(200).json({ userData: result[0] });
       } else {
         res.status(404).json({ error: "Usuário não encontrado" });
       }
     }
   });
 };
+
 
 export const login = async (req, res) => {
   const { email, senha } = req.body;

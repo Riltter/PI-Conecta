@@ -17,8 +17,8 @@ const Login = () => {
     }
     try {
       const response = await axios.post("http://localhost:8800/login", {
-        email,
-        senha,
+        email: email,
+        senha: senha,
       });
 
       if (response.status === 200) {

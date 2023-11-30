@@ -66,10 +66,11 @@ function Register() {
     const response = await axios.post("http://localhost:8800", dados);
     if (response.status === 200) {
       alert("Cadastrado com sucesso!");
+      navigate("/login");
     } else {
       alert("Ocorreu um erro ao cadastrar o usuário.");
     }
-    loginAutenticate();
+    //loginAutenticate();
   };
 
   return (
@@ -181,7 +182,6 @@ function Register() {
                   onChange={(e) => setCpf(e.target.value)}
                   required
                 />
-                {console.log(cpf)}
               </div>
               <div className={style.input_box}>
                 <label htmlFor="password">Senha</label>

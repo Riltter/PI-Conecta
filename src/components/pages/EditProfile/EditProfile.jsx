@@ -26,23 +26,23 @@ const EditProfile = () => {
     email: "",
   });
 
+  const emailteste = "kenedy@gmail.com";
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const emailteste = "r1234@gmail.com";
-        const response = await axios.get(`http://localhost:8800/edit`, {
-          params: { emailteste },
-        });
+        const response = await axios.get(`http://localhost:8800/edit?email=${emailteste}`);
         console.log("passou bitch");
 
         if (response.data) {
-          const user = userData({
-            email: userData.email,
-            userName: userData.nome_usuario,
-            campus: userData.campus,
-            sobre: userData.sobre,
-            linkedin: userData.linkedin,
-            instagram: userData.instagram,
+          const user = response.data.userData;
+          setUserData({
+            email: user.email,
+            userName: user.nome_usuario,
+            campus: user.campus,
+            sobre: user.sobre,
+            linkedin: user.linkedin,
+            instagram: user.instagram,
           });
         }
       } catch (error) {
@@ -55,7 +55,7 @@ const EditProfile = () => {
 
   const handleSave = async () => {
     try {
-      await axios.put("http://localhost:8800/", {
+      await axios.put(`http://localhost:8800/${emailteste}`, {
         nome_usuario: userData.userName,
         campus: userData.campus,
         sobre: userData.sobre,
@@ -83,7 +83,7 @@ const EditProfile = () => {
               </InputBoxLabel>
               <InputBoxInput
                 type="text"
-                id="nameUserid"
+                id="nameUser"
                 name="nameUser"
                 defaultValue={userData.userName}
                 onChange={(e) =>
@@ -127,7 +127,7 @@ const EditProfile = () => {
               <InputBoxLabel htmlFor="linkedinLink">Linkedin</InputBoxLabel>
               <InputBoxInput
                 type="text"
-                id="linkedinLinkid"
+                id="linkedinLink"
                 name="linkedinLink"
                 defaultValue={userData.linkedin}
                 onChange={(e) =>
@@ -139,7 +139,7 @@ const EditProfile = () => {
               <InputBoxLabel htmlFor="instagramLink">Instagram</InputBoxLabel>
               <InputBoxInput
                 type="text"
-                id="instagramLinkid"
+                id="instagramLink"
                 name="instagramLink"
                 defaultValue={userData.instagram}
                 onChange={(e) =>
