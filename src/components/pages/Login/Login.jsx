@@ -75,6 +75,7 @@ const Login = () => {
               </div>
             </div>
             {error && <p className={style.errorMessage}>{error}</p>}
+          </div>
 
           <div className={style.buttons}>
             <button className={style.btnCadastrar1} onClick={handleLogin}>

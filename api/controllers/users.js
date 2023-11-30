@@ -1,5 +1,4 @@
 import { db } from "../Database/db.js";
-import bcrypt from "bcrypt";
 
 export const getUsers = (req, res) => {
   const emailToCheck = req.query.email;
@@ -14,6 +13,24 @@ export const getUsers = (req, res) => {
         res.status(200).json({ exists: true });
       } else {
         res.status(200).json({ exists: false });
+      }
+    }
+  });
+};
+
+export const getUser = (req, res) => {
+  const { email } = req.body;
+  const query =
+    "SELECT email, nome_usuario, campus, sobre, linkedin, instagram FROM usuario WHERE email = ?";
+
+  db.query(query, [email], (err, result) => {
+    if (err) {
+      res.status(500).json({ error: "Erro" });
+    } else {
+      if (result.length > 0) {
+        res.status(200).json({ userData: result[0] }); // Retorna o primeiro resultado encontrado para o email
+      } else {
+        res.status(404).json({ error: "Usuário não encontrado" });
       }
     }
   });
@@ -40,7 +57,6 @@ export const login = async (req, res) => {
     }
   });
 };
-
 
 export const addUsers = (req, res) => {
   const q =
@@ -77,7 +93,6 @@ export const updateUser = (req, res) => {
     return res.status(200).json("Dados do usuário atualizados com sucesso.");
   });
 };
-
 
 export const deleteUsers = (req, res) => {
   const q = "DELETE FROM usuario WHERE `cpf` = ?";
