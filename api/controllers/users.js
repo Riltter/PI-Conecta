@@ -61,6 +61,7 @@ export const login = async (req, res) => {
 };
 
 export const addUsers = (req, res) => {
+  console.log('Passou por aqui!!!');
   const q =
     "INSERT INTO usuario(`cpf`, `nome_completo`, `nome_usuario`, `email`, `data_de_nascimento`, `senha`) VALUES(?)";
 

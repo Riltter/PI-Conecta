@@ -70,6 +70,7 @@ function Register() {
     } else {
       alert("Ocorreu um erro ao cadastrar o usuário.");
     }
+    console.log(response.message);
     //loginAutenticate();
   };
 

@@ -26,7 +26,7 @@ const EditProfile = () => {
     email: "",
   });
 
-  const emailteste = "kenedy@gmail.com";
+  const emailteste = "thallyston@hotmail.com";
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -101,6 +101,7 @@ const EditProfile = () => {
                     setUserData({ ...userData, campus: e.target.value })
                   }
                 >
+                  <option value=""></option>
                   <option value="Asa Norte">Asa Norte</option>
                   <option value="Taguatinga">Taguatinga</option>
                   <option value="Ambos">Ambos</option>
