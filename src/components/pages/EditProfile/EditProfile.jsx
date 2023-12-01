@@ -18,7 +18,7 @@ const EditProfile = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const emailteste = 'kenedy@gmail.com';
+                const emailteste = 'halycia.of@sempreeceub.com';
                 const response = await axios.get(`http://localhost:8800/`);
 
                 if (response.data) { // Verifica se há dados na resposta
